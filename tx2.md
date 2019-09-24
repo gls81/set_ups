@@ -17,11 +17,18 @@ If using a Nvidia TX2 Dev Kit just following the SDK Manager, if using a Aetina 
 Download patch files from [Aetina](https://www.aetina.com/support-download.php?t=4&p1=86&p2=87) note at time of writing they only have a patch for JetPack 4.2, not 4.2.1 or 4.2.2.
 
 
-
 It is imprtant that you do connect TX2 and coomence flashing until the specific patches downloaded from Aetina have been copied over the corresponding files in the OS Image.
 Once copying is completed put the TX2 into recovery mode and allow the SDK manager to flash the TX2 and then install the revelvant software packages as prompted by the SDK Manager.
 
 **Step 2 - Patch the Kernel**
 Clone the scripts from [this Github repo](https://github.com/Tengyun-Mo/buildLibrealsense2TX2). Note that this installs Realsense SDK 2.20.0. At the time of writing 2.28.0 is the most current version of the SDK and is the version I installed on our TX-2. To instal your desired version edit the LIBREALSENSE_VERSION parameter in both buildPatchedKernel.sh and installLibrealsense.sh. Then simply follow the guide provided by the author on GitHub.
 
+**Step 3 - Install ROS**
+If required ROS Melodic can be installed as per this [guide](http://wiki.ros.org/melodic/Installation/Ubuntu)
 
+**Step 4 - Install TensorFlow**
+Follow this [guide](https://docs.nvidia.com/deeplearning/frameworks/install-tf-jetson-platform/index.html). When installing the TensorFlow for Jetpack 4.2 use (newer versions are build with a newer version of CUDNN compatible with JetPAck 4.2.1 and 4.2.2) -  
+
+sudo pip3 install --extra-index-url https://developer.download.nvidia.com/compute/redist/jp/v42 tensorflow-gpu==1.13.1+nv19.5
+
+**Step 5 - Realsense ROS** 
