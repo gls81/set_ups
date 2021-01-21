@@ -12,9 +12,15 @@ A list of useful commands that I will probably forget.
 
 ### User Management
 
-`useradd -c “Users Name” <username>` - Add new user
+`sudo useradd -c “Users Name” <username>` - Add new user
 
 `groups <username>`	- List groups for user
+
+`whoami` - Shows user name
+
+`sudo usermod -a -G <group> <username>` - Add user to group
+
+`nano /etc/group` - Edit this file to remove users from groups 
 
 ### Networking
 
@@ -42,6 +48,30 @@ A list of useful commands that I will probably forget.
 
 `export`	- 
 
+
+### Informational Commands
+
+`ps` - Lists currently running process (programs).
+
+`w` - Show who is logged on and what they are doing.
+
+`id` - Print your user-id and group id's
+
+`df` - Report filesystem disk space usage (“Disk Free” is how I remember it)
+
+`du` - Disk Usage in a particular directory. “du -s” provides a summary for the current directory.
+
+`top` - Displays CPU processes in a full-screen GUI. A great way to see the activity on your computer in real-time. Type “Q” to quit.
+
+`free` - Displays the amount of free and used memory in the system.
+
+`cat /proc/cpuinfo` - Displays information about your CPU.
+
+`cat /proc/meminfo` - Display lots of information about current memory usage.
+
+`uname -a` - Prints system information to the screen (kernel version, machine type, etc.)
+
+
 ### Kernel
 
 `uname -r`	-Kernel version
@@ -59,7 +89,42 @@ A list of useful commands that I will probably forget.
 `rmmod` -	Remove a module from the Linux kernel
 
 
+### Pipe
+
+`|`
+
+`ls -l ~ | grep '^.....w'` - Chains commands together.
+
+
+### Redirect
+
+`ls -l *.py > pyfiles.txt` - Write output of command to file.
+
+`ls -l *.py >> pyfiles.txt`- Append output of command to file.
+
+### GREP
+
+`grep`
+
+`egrep`
+
+### Disk Managemennt
+
+`mount` - Show all mounted 
+
+`mount -t ext4` - Only show ext4
+
+`sudo mount /dev/sdb1 /mnt/media` = 
+
 ### File System Management
+
+`which <Command>` - Shows the full path of shell commands found in your path
+
+`whereis <Command>` - Locates the program, source code, and manual page for a command
+
+`find` - Search for files matching certain patterns
+
+`pwd` - Print working directory
 
 `ls` -	List files and directories
 
@@ -67,9 +132,15 @@ A list of useful commands that I will probably forget.
 
 `cd`	
 
-`mkdir <name>	`
+`mkdir [-p] <dirname>` - Make directory where -p creates parents.
 
-`mkdir -m 700 <name>`	
+`mkdir -m 700 <dirname>`	
+
+`rmdir <dirname>`
+
+`rm -rf directory` - Recursively -r removes the directory and all files and directories in that directory structure. Use with caution. There is no "trash" container to quickly 
+restore your file from when using the command line. When you delete something, it is gone.
+
 
 `chmod 777 filename` 	
 
